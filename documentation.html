@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="media/battle-wand.ico" />
+		<link rel="stylesheet" href="style/pico.classless.min.css">
+		<link rel="stylesheet" href="style/style.css">
+                <script src="script/script.js" defer></script>
+		<title>Battle Wand Fantasy</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+          <ul>
+              <li>
+                  <a href="index.html">
+                      <picture>
+                          <source srcset="media/battle-wand-dark-128.png" media="(prefers-color-scheme: dark)">
+                          <img alt="Battle Wand Fantasy" src="media/battle-wand-128.png" />
+                      </picture>
+                  </a>
+              </li>
+              <li><a href="index.html"><strong>Battle Wand Fantasy</strong></a></li>
+          </ul>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="accessories.html">Accessories</a></li>
+              <li><a href="#" role="button">Documentation</a></li>
+          </ul>
+			</nav>
+		</header>
+		<main>
+        <article class="bwf-2-1-1-3-grid">
+            <aside>
+                <ul>
+                    <li><a href="#bwf-doc-setup">Setup</a></li>
+                    <li>
+                        <a href="#bwf-doc-action">Action</a>
+                        <ul>
+                            <li><a href="#bwf-doc-action-move">Move</a></li>
+                            <li><a href="#bwf-doc-action-range-attack">Range Attack</a></li>
+                            <li><a href="#bwf-doc-action-melee-attack">Melee Attack</a></li>
+                            <li><a href="#bwf-doc-action-injured">Injured</a></li>
+                            <li><a href="#bwf-doc-action-cover">Cover</a></li>
+                            <li><a href="#bwf-doc-action-defend">Defend</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#bwf-doc-willpower">Willpower</a></li>
+                    <li>
+                        <a href="#bwf-doc-making-a-unit">Making a Unit</a>
+                        <ul>
+                            <li><a href="#bwf-doc-making-a-unit-toughness">Toughness</a></li>
+                            <li><a href="#bwf-doc-making-a-unit-specials">Specials</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div>
+                <h2 id="bwf-doc-setup">Setup</h2>
+                <ul>
+                    <li><b>Teams:</b> Each player starts with 240 points that they can use to create their team.</li>
+                    <li><b>Battlefield:</b> Flat hexagon grid, with at least 6-12 pieces of terrain.</li>
+                    <li><b>Start:</b> Each player rolls a die. Whoever gets the higher number gets to choose which corner of the battlefield their units will be placed.</li>
+                    <li><b>Toughness Test:</b> Roll a six sided die. If the result is greater than or equal to the player’s unit’s toughness value then the toughness test is a success.</li>
+                    <li><b>Mission:</b> The game lasts up to 4 rounds. Players sum the point value of all enemy units they destroyed. Player with the most points wins.</li>
+                </ul>
+
+                <h2 id="bwf-doc-action">Action</h2>
+                <p>Player chooses a unit and it may do one of the following actions:</p>
+
+
+                <h3 id="bwf-doc-action-move">Moving</h3>
+                <ul>
+                    <li><b>Stay:</b> move 0 hex, can do range attacks</li>
+                    <li><b>Move:</b>Move 6 hex, can do melee or range attack after move action.</li>
+                    <li><b>Rush:</b> move 12 hex, can't attack</li>
+                    <li><b>Charge:</b> move 12 hex, can melee attack</li>
+                </ul>
+                <p>Regardless of where the unit is facing, it may move and turn in any direction.</p>
+
+                <h3 id="bwf-doc-action-range-attack">Range Attack</h3>
+                <p>Attacking Unit may fire at the enemy unit that is in line of sight and range. Attack takes one toughness test. It’s a hit if the result of the test is a success.</p>
+                <p>Targeted Unit then takes one toughness test. If the result is a failure then the unit gets one Injured token.</p>
+
+                <h3 id="bwf-doc-action-melee-attack">Melee Attack</h3>
+                <p>Attacking Unit moves into contact with the enemy unit and then does a melee attack. Attack takes one toughness test. It’s a hit if the result of the test is a success.</p>
+                <p>Targeted Unit then takes one toughness test. If the result is a failure then the unit gets one Injured token.</p>
+
+                <h3 id="bwf-doc-action-injured">Injured</h3>
+                <p>When a unit gets an injured token, roll one die. If the result is 6 then the unit is killed and removed from play.</p>
+                <p>If the result is less than or equal to 5, then the injured token stays on the unit. If the injured unit gets hit by a ranged or melee attack then the unit is killed and removed from play.</p> 
+
+                <h3 id="bwf-doc-action-cover">Cover</h3>
+                <p>Move 0 hex, can't attack, in a unit is in cover state.</p>
+                <p>When a unit is attacked while in cover state, roll one die. If the result is greater than or equal to 4 then the attack is ignored.</p>
+
+                <h3 id="bwf-doc-action-defend">Defend</h3>
+                <p>Move 0 hex, can do range attack in reaction to the enemy unit</p>
+                <p>Unit on Defend action doesn’t move from its position, but may react, by range attack, to an enemy unit that moves into its range and line of sight. The unit may stop enemy units at any point of the enemy unit’s Move, Rush, or Charge action, but target enemy unit is in cover state.</p>
+
+                <h2 id="bwf-doc-willpower">Willpower</h2>
+                <p>At the end of every round, when the player's team is now less than half the number of units from start while the rest of the team is either stunned or killed, then the player must do a Willpower test.</p>
+                <p>Player must pick an active unit that is not stunned and still alive, and then do a toughness test. If failed then the player loses the game.</p>
+
+                <h2 id="bwf-doc-making-a-unit">Making a Unit</h2>
+                <p>For preparing a team you have to make units based on your characters by setting their toughness and specials. Each of those units can only have up to 3 specials and costs at least 6 points in total.</p>
+
+                <h3 id="bwf-doc-making-a-unit-toughness">Toughness</h3>
+                <p>Toughness also determines the base points cost of the unit. Choose one before adding any specials.</p>
+                <ul>
+                    <li><b>Toughness 6:</b> costs 6 points</li>
+                    <li><b>Toughness 5:</b> costs 12 points</li>
+                    <li><b>Toughness 4:</b> costs 18 points</li>
+                    <li><b>Toughness 3:</b> costs 24 points</li>
+                    <li><b>Toughness 2:</b> costs 30 points</li>
+                </ul>
+
+                <h3 id="bwf-doc-making-a-unit-specials">Specials</h3>
+                <ul>
+                    <li><b>Armored (18pts):</b> When the unit is attacked, roll one die. If the result is greater than or equal to 4 then the attack is ignored.</li>
+                    <li><b>Shooter (6pts/12pts/18pts):</b> The unit can do a range attack with a range of 12 hex/24 hex/36 hex.</li>
+                    <li><b>Fast(6pts):</b> The unit can do a move action +6 hex and a rush/charge action +12 hex.</li>
+                    <li><b>Healer(12pts):</b> When a friendly unit within 3 hex is killed, roll one die. If the result is greater than or equal to 4 then the unit is just injured instead.</li>
+                    <li><b>Regenerate(24pts):</b> When the unit is killed, roll one die, If the result is greater than or equal to 4 then the unit is just injured instead.</li>
+                </ul>
+            </div>
+        </article>
+        <a href="#" class="bwf-scroll-to-top">
+            <img src="media/up.svg" alt="^">
+        </a>
+		</main>
+    <footer class="bwf-3-1-1-1-grid ">
+        <section>
+            <h2>Links</h2>
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="https://www.artstation.com/user-477527">Artstation</a></li>
+                        <li><a href="https://gab.com/GC202211198">Gab</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </section>
+        <section>
+            <h2>Menu</h2>
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="accessories.html">Accessories</a></li>
+                        <li><a href="documentation.html">Documentation</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </section>
+    </footer>
+	</body>
+</html>
